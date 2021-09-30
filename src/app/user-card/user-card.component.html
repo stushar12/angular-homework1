@@ -1,0 +1,37 @@
+<div class="pricing card mb-5 mb-lg-0">
+  <div class="card-body">
+    <h5 class="card-title text-muted text-uppercase text-center">{{myData.title}}</h5>
+    <h6 class="card-price text-center">{{myData.price}}<span class="period">/month</span></h6>
+    <hr>
+    <ul class="fa-ul">
+      <li><span class="fa-li"><i class="fa fa-check"></i></span>{{myData.user}}</li>
+      <li><span class="fa-li"><i class="fa fa-check"></i></span>{{myData.storage}}</li>
+      <li><span class="fa-li"><i class="fa fa-check"></i></span>{{myData.public_project}}</li>
+      <li><span class="fa-li"><i class="fa fa-check"></i></span>{{myData.community}}</li>
+      <li [ngClass]="{'text-muted':myData.private_project.available}">
+        <span class="fa-li">
+          <i
+            [ngClass]="{'fa-times':myData.private_project.available,'fa-check':!myData.private_project.available,fa:true}"></i>
+        </span>{{myData.private_project.private_project}}
+      </li>
+      <li [ngClass]="{'text-muted':myData.phone.available}">
+        <span class="fa-li">
+          <i [ngClass]="{'fa-times':myData.phone.available,'fa-check':!myData.phone.available,fa:true}"></i>
+        </span>{{myData.phone.phone}}
+      </li>
+      <li [ngClass]="{'text-muted':myData.subdomain.available}">
+        <span class="fa-li">
+          <i [ngClass]="{'fa-times':myData.subdomain.available,'fa-check':!myData.subdomain.available,fa:true}"></i>
+        </span>{{myData.subdomain.subdomain}}
+      </li>
+      <li [ngClass]="{'text-muted':myData.status.available}">
+        <span class="fa-li">
+          <i [ngClass]="{'fa-times':myData.status.available,'fa-check':!myData.status.available,fa:true}"></i>
+        </span>{{myData.status.status}}
+      </li>
+    </ul>
+    <div class="d-grid">
+      <a href="#" class="btn btn-primary text-uppercase">Button</a>
+    </div>
+  </div>
+</div>
